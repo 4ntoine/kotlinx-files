@@ -1,8 +1,9 @@
 buildscript {
     repositories {
         jcenter()
+        mavenLocal()
         gradlePluginPortal()
-//        maven { url "../kotlin-libraries-infra/build/maven" }
+        maven { url "../kotlin-libraries-infra/build/maven" }
         maven { url "https://dl.bintray.com/orangy/maven" }
     }
 
@@ -12,47 +13,47 @@ buildscript {
     }
 }
 
-// apply plugin: 'kotlinx.team.infra'
+ apply plugin: 'kotlinx.team.infra'
 
-// infra {
-//     teamcity {
-//         bintrayUser = "orangy"
-//         bintrayToken = "credentialsJSON:9a48193c-d16d-46c7-8751-2fb434b09e07"
-//     }
+ infra {
+     teamcity {
+         bintrayUser = "orangy"
+         bintrayToken = "credentialsJSON:9a48193c-d16d-46c7-8751-2fb434b09e07"
+     }
     
-//     publishing {
-//         include(":kotlinx-files")
+     publishing {
+         include(":kotlinx-files")
 
-//         bintray {
-//             organization = 'orangy'
-//             repository = 'maven'
-//             library = 'kotlinx-files'
+         bintray {
+             organization = 'orangy'
+             repository = 'maven'
+             library = 'kotlinx-files'
 
-//             username = findProperty('bintrayUser')
-//             password = findProperty('bintrayApiKey')
-//         }
+             username = findProperty('bintrayUser')
+             password = findProperty('bintrayApiKey')
+         }
         
-//         bintrayDev {
-//             organization = 'orangy'
-//             repository = 'maven'
-//             library = 'kotlinx-files-dev'
+         bintrayDev {
+             organization = 'orangy'
+             repository = 'maven'
+             library = 'kotlinx-files-dev'
 
-//             username = findProperty('bintrayUser')
-//             password = findProperty('bintrayApiKey')
-//         }
-//     }
+             username = findProperty('bintrayUser')
+             password = findProperty('bintrayApiKey')
+         }
+     }
 
-//     apiCheck {
-//         include(":kotlinx-files")
-//     }
+     apiCheck {
+         include(":kotlinx-files")
+     }
 
-//     node {
-//         version = '10.15.1'
-//         mocha('4.1.0')
-//         install("source-map-support", "0.5.3")
-//         install("mocha-teamcity-reporter", "2.2.2")
-//     }
-// }
+     node {
+         version = '10.15.1'
+         mocha('4.1.0')
+         install("source-map-support", "0.5.3")
+         install("mocha-teamcity-reporter", "2.2.2")
+     }
+ }
 
 allprojects {
     repositories {
