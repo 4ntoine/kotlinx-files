@@ -3,6 +3,6 @@ enableFeaturePreview('GRADLE_METADATA')
 rootProject.name = 'kotlinx-files-package'
 
 include ":core"
-include ":examples"
+// include ":examples"
 
 project(":core").name='kotlinx-files'
